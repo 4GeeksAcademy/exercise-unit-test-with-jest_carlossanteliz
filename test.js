@@ -1,6 +1,6 @@
 //Import the function sum from the app.js file
 
-const { sum } = require('./app.js');
+const { sum, fromDollarToYen } = require('./app.js');
 
 //Start of my first test
 
@@ -25,10 +25,10 @@ test("One euro should be 1.07 dollars", function() {
      expect(fromEuroToDollar(3.5)).toBe(3.745); // 1 euro is 1.07 dollars, then 3.5 euros should be = (3.5 * 1.07)
 })
 
-test ("One dollar should be 146.26 yens"), function () {
+test ("One dollar should be 146.26 yens", function () {
     const { fromDollarToYen } = require('./app.js');
 
-    const yens = fromDollarToYen(3)
+    const yens = fromDollarToYen(3);
 
     //If one dollar is 146.26 yens, then 3 dollars should be (3 * 146.26)
 
@@ -37,4 +37,14 @@ test ("One dollar should be 146.26 yens"), function () {
     //Comparisson for the unit test
 
     expect(fromDollarToYen(3)).toBe(438.78)
-}
+});
+
+test ("One yen should be 179.89 pounds", function () {
+    const { fromYenToPound } = require('./app.js');
+
+    const pounds = fromYenToPound(3);
+
+    const expected = 3 * 179.89
+
+    expect(fromYenToPound(3)).toBe(539.67)
+});
